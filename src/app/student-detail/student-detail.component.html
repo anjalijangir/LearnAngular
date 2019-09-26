@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div *ngIf="student">
+
+                <h2>{{student.name | uppercase}} Details</h2>
+                <div><span>RollNumber: </span>{{student.rollNumber}}</div>
+                <div>
+                    <label>name:
+                        <input [(ngModel)]="student.name" placeholder="name" />
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
