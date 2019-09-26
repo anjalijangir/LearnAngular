@@ -11,12 +11,19 @@ import { Student } from './student';
 })
 export class StudentService {
 
+
   constructor(private messageService: MessageService) { }
 
   getStudents(): Observable<Student[]> {
     // TODO: send the message _after_ fetching the heroes
-    // this.messageService.add('StudentService: fetched students');
+    this.messageService.add('StudentService: fetched students');
     return of(STUDENTS);
+  }
+
+  getStudent(rollnumber: number): Observable<Student> {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add(`StudentService: fetched student rollnumber=${rollnumber}`);
+    return of(STUDENTS.find(student => student.rollNumber === rollnumber));
   }
 
 }

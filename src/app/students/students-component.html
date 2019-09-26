@@ -1,10 +1,10 @@
 <div class>
     <h2>My Students</h2>
     <ul class="students">
-        <li *ngFor="let student of students" [class.selected]="student === selectedStudent" (click)="onSelect(student)">
+        <li *ngFor="let student of students">
+            <a routerLink = "/detail/{{student.rollNumber}}">
             <span class="badge">{{student.rollNumber}}</span> {{student.name}}
         </li>
-    </ul>
-
-    <app-student-detail [student]= "selectedStudent"></app-student-detail>
+    </ul>   
 </div>
+

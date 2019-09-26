@@ -9,8 +9,6 @@ import { StudentService } from '../student.service';
 })
 export class StudentsComponent implements OnInit {
 
-    selectedStudent: Student;
-
     students: Student[];
   
     constructor(private studentService: StudentService) { }
@@ -19,13 +17,9 @@ export class StudentsComponent implements OnInit {
       this.getStudents();
     }
   
-    onSelect(student: Student): void {
-      this.selectedStudent = student;
-    }
-  
     getStudents(): void {
       this.studentService.getStudents()
           .subscribe(students =>
-             this.students = this.students);
+             this.students = students);
     }
 }
